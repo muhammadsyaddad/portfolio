@@ -201,27 +201,41 @@ export default function About() {
       ref={containerRef}
       className="min-h-screen bg-white relative overflow-hidden"
     >
-      {/* Animated background */}
       <motion.div
         className="fixed inset-0 bg-gradient-to-br from-neutral-50 to-neutral-100"
         style={{ opacity: backgroundOpacity }}
       />
 
       <div className="relative z-10">
-        {/* Navigation */}
-        <motion.nav
+        <motion.header
+          className="fixed top-0 left-0 right-0 z-50 p-6 bg-white/80 backdrop-blur-sm"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="fixed top-0 left-0 right-0 z-50 p-6"
+          transition={{ duration: 0.6 }}
         >
-          <Link
-            href="/"
-            className="text-sm text-neutral-600 hover:text-black transition-colors duration-300"
-          >
-            ← Back to Home
-          </Link>
-        </motion.nav>
+          <nav className="flex justify-between items-center max-w-2xl mx-auto">
+            <Link
+              href="/"
+              className="text-lg font-medium hover:opacity-60 transition-opacity"
+            >
+              ←
+            </Link>
+            <div className="flex gap-8">
+              <Link
+                href="/projects"
+                className="text-sm hover:opacity-60 transition-opacity"
+              >
+                Projects
+              </Link>
+              <Link
+                href="/blog"
+                className="text-sm hover:opacity-60 transition-opacity"
+              >
+                Blog
+              </Link>
+            </div>
+          </nav>
+        </motion.header>
 
         <div className="max-w-2xl mx-auto px-6 pt-24 pb-16">
           {/* Header */}
@@ -235,7 +249,9 @@ export default function About() {
           <BreathingText delay={0.6}>
             <div className="text-lg leading-relaxed text-neutral-700 mb-20">
               <CharacterReveal delay={0.8}>
-                will be writen soon My head aint working at morning tbh
+                Hello my name is muhammad syaddad, im full stack developer,
+                currently im student at universitas islam negeri jakarta , i
+                study physics
               </CharacterReveal>
             </div>
           </BreathingText>
@@ -245,32 +261,32 @@ export default function About() {
             <h2 className="text-2xl font-light mb-12">
               <CharacterReveal delay={1.2}>Journey</CharacterReveal>
             </h2>
-            {/*<div className="mb-20">
+            <div className="mb-20">
               <TimelineItem
                 year="2024"
-                title="Senior Designer"
-                description="Leading design systems and user experience for digital products. Focusing on minimalist approaches that maximize impact."
+                title="Next??"
+                description="Its intresting to work in startup since that make u close with someone visionary, and in the long run i want to work with my own thing"
                 delay={1.4}
               />
               <TimelineItem
-                year="2022"
-                title="Full-Stack Developer"
-                description="Building modern web applications with React, Next.js, and Node.js. Specializing in performance optimization and clean architecture."
+                year="2025"
+                title="Sudent And Freelance"
+                description="Since i was student im not want more flexiblity about place, i cant work full time as ofline worker, i must work everyware."
                 delay={1.6}
               />
               <TimelineItem
-                year="2020"
-                title="UI/UX Designer"
-                description="Crafting user interfaces for startups and established companies. Developed expertise in user research and interaction design."
+                year="2021"
+                title="Full-Stack Developer"
+                description="Working as a full stack developer at al mahad (its boarding school), and help social media handle a little bit"
                 delay={1.8}
               />
               <TimelineItem
-                year="2018"
+                year="2020"
                 title="Started Journey"
-                description="Began exploring the intersection of design and technology. Self-taught programming and design fundamentals."
+                description="Begin code, short class for a year, i started with low level Language c++, and follow by ootstrap tech stack html css and jawirwcript."
                 delay={2.0}
               />
-            </div>*/}
+            </div>
           </BreathingText>
 
           {/* Skills */}
@@ -287,11 +303,12 @@ export default function About() {
                 "TypeScript",
                 "Tailwind CSS",
                 "Framer Motion",
-                "Figma",
+                "C++",
                 "Adobe Creative Suite",
                 "Node.js",
                 "PostgreSQL",
                 "Vercel",
+                "Rust",
               ].map((skill, index) => (
                 <SkillItem
                   key={skill}
@@ -311,13 +328,16 @@ export default function About() {
               <ContactLink href="mailto:muhamsyaddad@gmail.com" delay={3.4}>
                 muhamsyaddad@gmail.com
               </ContactLink>
-              <ContactLink href="https://twitter.com" delay={3.6}>
+              <ContactLink href="https://x.com/MuhammadSyadd" delay={3.6}>
                 Twitter
               </ContactLink>
               <ContactLink href="https://linkedin.com" delay={3.8}>
                 LinkedIn
               </ContactLink>
-              <ContactLink href="https://github.com" delay={4.0}>
+              <ContactLink
+                href="https://github.com/muhammadsyaddad"
+                delay={4.0}
+              >
                 GitHub
               </ContactLink>
             </div>

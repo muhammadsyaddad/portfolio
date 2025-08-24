@@ -8,11 +8,10 @@ import Link from "next/link";
 const blogPosts = [
   {
     id: 1,
-    title: "The First Content",
+    title: "Jikalau Monyet Bisa Menulis",
     date: "2024.03.15",
     readTime: 5,
-    preview: "will be writen soon.",
-    content: `will be writen soon`,
+    preview: "Refrensi dari series planet of apes.",
   },
 ];
 
@@ -151,23 +150,39 @@ export default function BlogPage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* Header */}
-      <header className="px-6 md:px-12 pt-16 pb-24">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
+      <motion.header
+        className="fixed top-0 left-0 right-0 z-50 p-6 bg-black/80 backdrop-blur-sm"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <nav className="flex justify-between items-center max-w-4xl mx-auto">
+          <Link
+            href="/"
+            className="text-lg font-medium text-white hover:opacity-60 transition-opacity"
           >
+            ←
+          </Link>
+          <div className="flex gap-8">
             <Link
-              href="/"
-              className="text-sm text-neutral-400 hover:text-neutral-100 transition-colors duration-300"
+              href="/projects"
+              className="text-sm text-white hover:opacity-60 transition-opacity"
             >
-              ← Back to Home
+              Projects
             </Link>
-          </motion.div>
+            <Link
+              href="/about"
+              className="text-sm text-white hover:opacity-60 transition-opacity"
+            >
+              About
+            </Link>
+          </div>
+        </nav>
+      </motion.header>
 
+      {/* Main Content */}
+      <main className="pt-24 pb-16 px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
           <motion.h1
             className="text-5xl md:text-7xl font-light text-white mb-6"
             initial={{ opacity: 0, y: 50 }}
@@ -187,7 +202,7 @@ export default function BlogPage() {
           </motion.h1>
 
           <motion.p
-            className="text-xl text-neutral-300 max-w-2xl leading-relaxed"
+            className="text-xl text-neutral-300 max-w-2xl leading-relaxed mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -195,12 +210,8 @@ export default function BlogPage() {
             A collection of ideas about design, development, and the
             intersection of technology and creativity.
           </motion.p>
-        </div>
-      </header>
 
-      {/* Blog Posts */}
-      <main className="px-6 md:px-12 pb-24">
-        <div className="max-w-4xl mx-auto">
+          {/* Blog Posts */}
           {blogPosts.map((post, index) => (
             <BlogPost key={post.id} post={post} index={index} />
           ))}

@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "E-commerce Platform",
+    name: "Clips.Id",
     year: "2024",
     category: "Development",
     description: "Make a clipping website contest, (on going project).",

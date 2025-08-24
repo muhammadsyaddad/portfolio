@@ -108,7 +108,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="space-y-6"
           >
-            <p className="font-serif text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed transition-colors duration-1000">
+            <p className="font-serif text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed transition-colors duration-1000 ">
               im syaddad , scroll for detail about my self, btw i think
               sharelokeholmes better than hercule poirot
             </p>
@@ -201,7 +201,7 @@ function ScrollHighlightText() {
             ),
           }}
         >
-          some mechine learning.
+          mechine learning..
         </motion.span>
       </motion.p>
     </div>
@@ -271,7 +271,7 @@ function PortfolioSection() {
     <section
       id="portfolio-section"
       ref={sectionRef}
-      className="flex items-center justify-center min-h-screen px-6 md:px-12 relative overflow-hidden"
+      className="flex items-center justify-center min-h-screen px-6 md:px-12 relative overflow-hidden "
     >
       <motion.div
         className="absolute inset-0 opacity-10"
@@ -357,9 +357,12 @@ function PortfolioSection() {
         <motion.div variants={itemVariants} className="space-y-6">
           <motion.div className="flex items-center justify-center gap-8">
             {[
-              { name: "Twitter", href: "https://twitter.com" },
-              { name: "GitHub", href: "https://github.com" },
-              { name: "LinkedIn", href: "https://linkedin.com" },
+              { name: "Twitter", href: "https://x.com/MuhammadSyadd" },
+              { name: "GitHub", href: "https://github.com/muhammadsyaddad" },
+              {
+                name: "LinkedIn",
+                href: "https://www.linkedin.com/in/muhammad-syaddad-a1048b210/",
+              },
             ].map((social, index) => (
               <motion.a
                 key={social.name}
