@@ -1,16 +1,20 @@
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const projects = {
     "1": {
-      title: "Minimal Portfolio",
+      title: "Scholarship website",
       year: "2024",
-      category: "Web Design",
-      description: "will be writen soon.",
-      tech: ["Next.js", "Framer Motion", "TypeScript", "Tailwind CSS"],
-      duration: "3 months",
-      role: "Lead Designer & Developer",
-      challenge: "will be writen soon.",
-      solution: "will be writen soon.",
-      outcome: "will be writen soon.",
+      category: "Web",
+      description:
+        "Skolaro is a full-stack, automated scholarship aggregation platform designed to solve a simple yet significant problem for Indonesian students: the scattered and disorganized nature of scholarship information. The project automatically scrapes data from various sources, centralizes it into a single database, and presents it to users through a clean, modern, and searchable web interface.",
+      tech: ["Next.js", "Crawlee", "TypeScript", "Tailwind CSS", "Playwright"],
+      duration: "2 week (i still maintin)",
+      role: "Full Stak Dev",
+      challenge:
+        "i found scholarship in my country have bad ui/ux, and the good ones required to become a member if u want use the filter in the web (crazy right), and i think i gues should make one.",
+      solution:
+        "To address this, I engineered a complete end-to-end solution composed of two distinct but interconnected applications, first The Data Engine  (this is my robot that handle a scraping data htis the repo: https://github.com/muhammadsyaddad/my_beloved_mechine), and the second the frontend (this is my repo https://skolaro.vercel.app)",
+      outcome:
+        "The entire system is designed to be automated and require minimal manual intervention. Here's how data flows from the source to the screen:\n\n1.Scheduled Execution with GitHub Actions: A cron-based GitHub Actions workflow triggers the scraping process automatically every day, ensuring the data remains fresh and up-to-date\n\n2.Intelligent Web Scraping: The Node.js crawler, built with the powerful Crawlee and Playwright libraries, navigates the target scholarship websites. It's designed to handle modern, JavaScript-heavy sites and resiliently extracts key information like titles, deadlines, and descriptions\n\n3.Data Persistence in Supabase: Once the data is scraped and structured, it is securely inserted into a Supabase PostgreSQL database. Supabase acts as the single source of truth for the entire application\n\n4.Data Consumption via Next.js: The Skolaro frontend, a server-rendered Next.js 14 application, fetches the scholarship data directly from Supabase. Using Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) ensures the pages are fast, SEO-friendly, and always display the latest data\n\n5.Intuitive User Interface: The data is presented to the user through a clean and responsive interface built with Tailwind CSS. Users can easily search, filter, and view detailed information for each scholarship.",
       link: "https://github.com/username/minimal-portfolio",
     },
     "2": {
@@ -24,7 +28,7 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
       challenge: "will be writen soon.",
       solution: "will be writen soon.",
       outcome: "will be writen soon.",
-      link: "https://github.com/username/ecommerce-platform",
+      link: "https://skolaro.vercel.app",
     },
   };
 
@@ -114,22 +118,24 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
 
           {/* Challenge */}
           <section className="mb-16">
-            <h2 className="text-2xl font-light text-gray-900 mb-6">
-              Challenge
-            </h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">Why?</h2>
             <p className="text-gray-700 leading-relaxed">{project.challenge}</p>
           </section>
 
           {/* Solution */}
           <section className="mb-16">
             <h2 className="text-2xl font-light text-gray-900 mb-6">Solution</h2>
-            <p className="text-gray-700 leading-relaxed">{project.solution}</p>
+            <p className="text-gray-700 leading-relaxed  whitespace-pre-line">
+              {project.solution}
+            </p>
           </section>
 
           {/* Outcome */}
           <section className="mb-16">
             <h2 className="text-2xl font-light text-gray-900 mb-6">Outcome</h2>
-            <p className="text-gray-700 leading-relaxed">{project.outcome}</p>
+            <p className="text-gray-700 leading-relaxed  whitespace-pre-line">
+              {project.outcome}
+            </p>
           </section>
 
           {/* Link */}
