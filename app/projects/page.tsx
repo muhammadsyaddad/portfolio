@@ -11,7 +11,7 @@ const projects = [
     year: "2024",
     category: "Development",
     description:
-      "a Full stack schoolarship website with a eye cathing ui an uatomation scraping data with github action.",
+      "a Full stack schoolarship website with cool ui and otomation scraping data with github action.",
     tech: "Next.js, github action, TypeScript, Crawlee, Playwright, React ",
     color: "from-blue-500/20 to-cyan-500/20",
   },
