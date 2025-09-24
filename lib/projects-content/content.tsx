@@ -1,0 +1,37 @@
+  import { Projects } from "@/lib/constant";
+  
+  export const projects: Projects = {
+    "1": {
+      title: "Scholarship website",
+      year: "2024",
+      category: "Web",
+      description:
+        "Skolaro is a full-stack, automated scholarship aggregation platform designed to solve a simple yet significant problem for Indonesian students: the scattered and disorganized nature of scholarship information. The project automatically scrapes data from various sources, centralizes it into a single database, and presents it to users through a clean, modern, and searchable web interface.",
+      tech: ["Next.js", "Crawlee", "TypeScript", "Tailwind CSS", "Playwright"],
+      duration: "2 week (i still maintin)",
+      role: "Full Stak Dev",
+      challenge:
+        "i found scholarship in my country have bad ui/ux, and the good ones required to become a member if u want use the filter in the web (crazy right), and i think i gues should make one.",
+      solution:
+        "To address this, I engineered a complete end-to-end solution composed of two distinct but interconnected applications, first The Data Engine  (this is my robot that handle a scraping data htis the repo: https://github.com/muhammadsyaddad/my_beloved_mechine), and the second the frontend (this is my repo https://skolaro.vercel.app)",
+      outcome:
+        "The entire system is designed to be automated and require minimal manual intervention. Here's how data flows from the source to the screen:\n\n1.Scheduled Execution with GitHub Actions: A cron-based GitHub Actions workflow triggers the scraping process automatically every day, ensuring the data remains fresh and up-to-date\n\n2.Intelligent Web Scraping: The Node.js crawler, built with the powerful Crawlee and Playwright libraries, navigates the target scholarship websites. It's designed to handle modern, JavaScript-heavy sites and resiliently extracts key information like titles, deadlines, and descriptions\n\n3.Data Persistence in Supabase: Once the data is scraped and structured, it is securely inserted into a Supabase PostgreSQL database. Supabase acts as the single source of truth for the entire application\n\n4.Data Consumption via Next.js: The Skolaro frontend, a server-rendered Next.js 14 application, fetches the scholarship data directly from Supabase. Using Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) ensures the pages are fast, SEO-friendly, and always display the latest data\n\n5.Intuitive User Interface: The data is presented to the user through a clean and responsive interface built with Tailwind CSS. Users can easily search, filter, and view detailed information for each scholarship.",
+      link: "https://github.com/muhammadsyaddad/Skolaro",
+    },
+    "2": {
+      title: "Clips.id",
+      year: "2024",
+      category: "Development",
+      description: "Clips.id bassicly is the cliper dashboard contest, the creator contest can make contest where he wants hes video everywhere and the clipper can join the contest",
+      tech: ["React", "Node.js", "Midtrans Api", "PostgreSQL","Next js"],
+      duration: "1 months + 2 weeks",
+      role: "Full Stack Developer",
+      challenge: "i heard once statement that if ai can make anything the whats matter left is attention, in modern society who can control the attention can control the human.i see many people make like clipper contest with hastag, and the most watch video become a winner, and i think its cool if there is control dashboard for it, and help the creator contest not scroll all the time see who is gonna be win.so bassicly clips-id is application for creator contest manage their clip contest, u can bassicly see the progres of ur contest.",
+      outcome: "so when user visit the site, user can see whats the contest curently going, if the guest want to join the contest its required login [IMAGE:/clips-id-contest-assets/work-page.png] when user has logged in he can see creator(as creator contest) and user(as clipper contest) dashboard[IMAGE:/clips-id-contest-assets/profile-dashboard.png] this is clipper dashboard look like this [IMAGE:/clips-id-contest-assets/clipper-dashboard.png] and the creator dashboard like this [IMAGE:/clips-id-contest-assets/creator-dashboard.png] why i make the user is can have two dashboard?, as a cliper and as a creator?, because its most easy ways for finishing the project is really possible to build, beacause i have worried before when the cliper want to join contest hes must connect the yt, tiktok, or ig (depends the creator contest rule , the detail after this).so continue if user wanna make a contest he just click create new contest in the site and redirict to page [IMAGE:/clips-id-contest-assets/form-creator.png] when creator fill the form the snap took action and click create contest [IMAGE:/clips-id-contest-assets/creator-dashboard.png] when user fill the form the snap took action and click create contest [IMAGE:/clips-id-contest-assets/payment-snap.png] thats our bill to pay (is in idr btw), when the money has been payed click check status, and then we rediricting to the creator dashboard  [IMAGE:/clips-id-contest-assets/creator-dashboard-check.png] congrats u just make a new contest back to the cliper when the cliper want join the contest he can ses in the work page  [IMAGE:/clips-id-contest-assets/contest-exist.png] oke thats  our new contest, okey let me try (i try with another account btw) just click join contest  [IMAGE:/clips-id-contest-assets/join-contest.png] and we redirict to detail page of the contest page first , and then click join contest again [IMAGE:/clips-id-contest-assets/contest-exist.png] oke thats  our new contest, okey let me try (i try with another account btw) just click join contest  [IMAGE:/clips-id-contest-assets/submit-contest.png] oops since the contest must be required yt so we must connect our youtube (why is this becauce when u connected account we now that the video is yours) go to settings [IMAGE:/clips-id-contest-assets/pointing-setting.png] and click connected account [IMAGE:/clips-id-contest-assets/settings-page.png] if the account has connected (example above) u can go to contest again [IMAGE:/clips-id-contest-assets/submit-clipe-connected-account.png] yup we submit now click submit, after that we can wait the creator for approve our content, back to the creator we can see the submission [IMAGE:/clips-id-contest-assets/check-submission.png] the creator normally the video if this relevany or not, for example the content was oke, just click approve and we wait the winner, since we just seting contest just for one like so we can like by our self to see where is goes [IMAGE:/clips-id-contest-assets/cliper-dashboard-earnings-check.png] congrats to us we just win the content, lest with draw with our account in earnings page [IMAGE:/clips-id-contest-assets/earnings-page.png] and yeah just like that, whats next?when im writing like this i personally kinda hated it somehow but ist make the lack of my site ist more obvious. im going to make more automated in creator verivication contest such like the video can notice that relevant for the creator refrence (when the creator make new contest in new form there is video part), so creator do verification more less",
+      link: "https://clips-id.vercel.app",
+    },
+  };
+
+
+
+  // [IMAGE:/clips-id-contest-assets/work-page.png]
