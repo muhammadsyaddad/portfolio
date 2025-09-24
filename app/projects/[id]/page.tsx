@@ -1,4 +1,8 @@
-export default function ProjectDetail({ params }: { params: { id: string } }) {
+export default async function ProjectDetail({
+  params,
+}: {
+  params: { id: string };
+}) {
   const projects = {
     "1": {
       title: "Scholarship website",
@@ -15,7 +19,7 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
         "To address this, I engineered a complete end-to-end solution composed of two distinct but interconnected applications, first The Data Engine  (this is my robot that handle a scraping data htis the repo: https://github.com/muhammadsyaddad/my_beloved_mechine), and the second the frontend (this is my repo https://skolaro.vercel.app)",
       outcome:
         "The entire system is designed to be automated and require minimal manual intervention. Here's how data flows from the source to the screen:\n\n1.Scheduled Execution with GitHub Actions: A cron-based GitHub Actions workflow triggers the scraping process automatically every day, ensuring the data remains fresh and up-to-date\n\n2.Intelligent Web Scraping: The Node.js crawler, built with the powerful Crawlee and Playwright libraries, navigates the target scholarship websites. It's designed to handle modern, JavaScript-heavy sites and resiliently extracts key information like titles, deadlines, and descriptions\n\n3.Data Persistence in Supabase: Once the data is scraped and structured, it is securely inserted into a Supabase PostgreSQL database. Supabase acts as the single source of truth for the entire application\n\n4.Data Consumption via Next.js: The Skolaro frontend, a server-rendered Next.js 14 application, fetches the scholarship data directly from Supabase. Using Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) ensures the pages are fast, SEO-friendly, and always display the latest data\n\n5.Intuitive User Interface: The data is presented to the user through a clean and responsive interface built with Tailwind CSS. Users can easily search, filter, and view detailed information for each scholarship.",
-      link: "https://github.com/username/minimal-portfolio",
+      link: "https://github.com/muhammadsyaddad/Skolaro",
     },
     "2": {
       title: "Clips.id",
@@ -23,16 +27,16 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
       category: "Development",
       description: "will be writen soon",
       tech: ["React", "Node.js", "Stripe API", "PostgreSQL"],
-      duration: "6 months",
+      duration: "1 months + 2 weeks",
       role: "Full Stack Developer",
       challenge: "will be writen soon.",
       solution: "will be writen soon.",
       outcome: "will be writen soon.",
-      link: "https://skolaro.vercel.app",
+      link: "https://clips-id.vercel.app",
     },
   };
-
-  const project = projects[params.id as keyof typeof projects];
+  const param = await params;
+  const project = projects[param.id as keyof typeof projects];
 
   if (!project) {
     return (
@@ -132,7 +136,9 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
 
           {/* Outcome */}
           <section className="mb-16">
-            <h2 className="text-2xl font-light text-gray-900 mb-6">Outcome</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">
+              How it Works
+            </h2>
             <p className="text-gray-700 leading-relaxed  whitespace-pre-line">
               {project.outcome}
             </p>

@@ -185,7 +185,7 @@ function ScrollHighlightText() {
             ),
           }}
         >
-          Im a full stack developer currently learning how to implment
+          Im a full stack developer
         </motion.span>{" "}
         <motion.span
           className="relative inline-block transition-colors duration-500"
@@ -201,7 +201,7 @@ function ScrollHighlightText() {
             ),
           }}
         >
-          mechine learning..
+          based on indonesia
         </motion.span>
       </motion.p>
     </div>
@@ -301,7 +301,7 @@ function PortfolioSection() {
             className="font-sans text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight transition-colors duration-1000"
             style={{ color: portfolioTextColor }}
           >
-            {"Portfolio".split("").map((char, index) => (
+            {"Menu".split("").map((char, index) => (
               <motion.span
                 key={index}
                 className="inline-block"
@@ -406,9 +406,7 @@ function PortfolioSection() {
               className="inline-block transition-colors duration-1000"
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-            >
-              Back to top
-            </motion.span>
+            ></motion.span>
             <motion.span
               className="inline-block ml-2 transition-colors duration-1000"
               animate={{ y: [0, -3, 0] }}
