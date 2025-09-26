@@ -1,12 +1,13 @@
 import { projects } from "@/lib/projects-content/content";
 import { renderOutcome } from "@/lib/helper/render-outcome";
 
+export const runtime = "edge";
 export default async function ProjectDetail({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params; 
+  const { id } = await params;
   const project = projects[id as keyof typeof projects];
 
   if (!project) {
@@ -100,7 +101,9 @@ export default async function ProjectDetail({
           {/* Solution */}
           {project.solution && (
             <section className="mb-16">
-              <h2 className="text-2xl font-light text-gray-900 mb-6">Solution</h2>
+              <h2 className="text-2xl font-light text-gray-900 mb-6">
+                Solution
+              </h2>
               <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                 {project.solution}
               </p>

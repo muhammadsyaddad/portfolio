@@ -7,6 +7,7 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
+export const runtime = "edge";
 // Sample blog data (same as in blog page)
 const blogPosts = [
   {
