@@ -33,5 +33,3 @@
   };
 
 
-
-  // [IMAGE:/clips-id-contest-assets/work-page.png]
