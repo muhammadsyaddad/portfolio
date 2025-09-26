@@ -8,7 +8,7 @@
     "lint": "next lint",
     "start": "next start",
     "pages:build": "npx @cloudflare/next-on-pages --experimental-minify",
-    "postbuild": "echo '_worker.js' > .vercel/output/static/.assetsignore"
+    "postbuild": "mkdir -p .vercel/output/static && echo '_worker.js' > .vercel/output/static/.assetsignore"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
