@@ -55,12 +55,12 @@ export default function HomePage() {
 
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.5, 0.7, 1],
+    [0, 0.3, 0.45, 0.5, 1],
     [
       "hsl(0 0% 100%)", // white
       "hsl(0 0% 100%)", // white
-      "hsl(0 0% 20%)", // transition to dark
-      "hsl(0 0% 0%)", // black
+      "hsl(0 0% 10%)", // transition to dark (faster)
+      "hsl(0 0% 0%)", // black (reached at 0.5 when Menu section appears)
       "hsl(0 0% 0%)", // black
     ],
   );
@@ -271,7 +271,8 @@ function PortfolioSection() {
     <section
       id="portfolio-section"
       ref={sectionRef}
-      className="flex items-center justify-center min-h-screen px-6 md:px-12 relative overflow-hidden "
+      className="flex items-center justify-center min-h-screen px-6 md:px-12 relative overflow-hidden bg-black"
+      style={{ backgroundColor: "hsl(0 0% 0%)" }}
     >
       <motion.div
         className="absolute inset-0 opacity-10"
