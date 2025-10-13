@@ -38,7 +38,7 @@ export default function HomePage() {
   const textColor = useTransform(
     scrollYProgress,
     [0.4, 0.6],
-    ["hsl(var(--foreground))", "hsl(0 0% 100%)"], // white text in dark theme
+    ["hsl(0 0% 0%)", "hsl(0 0% 100%)"], // black to white text
   );
 
   useEffect(() => {
@@ -57,11 +57,11 @@ export default function HomePage() {
     scrollYProgress,
     [0, 0.3, 0.5, 0.7, 1],
     [
-      "hsl(var(--background))",
-      "hsl(var(--background))",
-      "hsl(220 13% 18%)", // transition to dark
-      "hsl(224 71% 4%)", // darker
-      "hsl(224 71% 4%)", // darkest
+      "hsl(0 0% 100%)", // white
+      "hsl(0 0% 100%)", // white
+      "hsl(0 0% 20%)", // transition to dark
+      "hsl(0 0% 0%)", // black
+      "hsl(0 0% 0%)", // black
     ],
   );
 
@@ -264,7 +264,7 @@ function PortfolioSection() {
   const portfolioTextColor = useTransform(
     portfolioScrollProgress,
     [0.2, 0.8],
-    ["hsl(var(--foreground))", "hsl(0 0% 100%)"],
+    ["hsl(0 0% 0%)", "hsl(0 0% 100%)"],
   );
 
   return (
