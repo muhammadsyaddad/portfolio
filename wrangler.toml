@@ -1,8 +1,0 @@
-name = "muhammad-syaddad"
-compatibility_date = "2024-09-01"
-
-[build]
-command = "pnpm run pages:build"
-
-[assets]
-directory = ".vercel/output/static"

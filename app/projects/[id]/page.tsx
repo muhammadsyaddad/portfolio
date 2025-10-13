@@ -1,7 +1,6 @@
 import { projects } from "@/lib/projects-content/content";
 import { renderOutcome } from "@/lib/helper/render-outcome";
 
-export const runtime = "edge";
 export default async function ProjectDetail({
   params,
 }: {
